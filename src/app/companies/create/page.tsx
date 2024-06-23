@@ -24,7 +24,7 @@ export const companySchema = yup.object().shape({
 
 export default function CompanyCreate() {
   const methods = useForm({
-    resolver: yupResolver(companySchema),
+    // resolver: yupResolver(companySchema),
   });
 
   const {
@@ -65,7 +65,7 @@ export default function CompanyCreate() {
           autoComplete="off"
           onSubmit={handleSubmit(onSubmit)}
         >
-          {fields.map((item, index) => (
+          {/* {fields.map((item, index) => (
             <Box key={item.id} sx={{ mb: 2 }}>
               <Typography variant="h6" sx={{ mb: 1 }}>
                 Title {index + 1}
@@ -93,7 +93,7 @@ export default function CompanyCreate() {
                 name={`companies.${index}.website`}
               />
             </Box>
-          ))}
+          ))} */}
           <Button variant="contained" onClick={handleDuplicate} sx={{ mb: 2 }}>
             Duplicate
           </Button>
