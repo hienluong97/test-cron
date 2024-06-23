@@ -1,0 +1,33 @@
+0000000000000000000000000000000000000000 2ab886c0b57aa44c979852db4a7e41ebc9a34e63 luong <hienluong1997@gmail.com> 1716828043 +0700	clone: from https://github.com/MoTech-SG/subsidy.git
+2ab886c0b57aa44c979852db4a7e41ebc9a34e63 2ab886c0b57aa44c979852db4a7e41ebc9a34e63 luong <hienluong1997@gmail.com> 1716828607 +0700	checkout: moving from main to luong/edit-company
+2ab886c0b57aa44c979852db4a7e41ebc9a34e63 25fe10024f30c060a4f91d72dd1e54ef7cbb946e luong <hienluong1997@gmail.com> 1716834071 +0700	commit: edit create user form
+25fe10024f30c060a4f91d72dd1e54ef7cbb946e 2ab886c0b57aa44c979852db4a7e41ebc9a34e63 luong <hienluong1997@gmail.com> 1716834387 +0700	checkout: moving from luong/edit-company to main
+2ab886c0b57aa44c979852db4a7e41ebc9a34e63 25fe10024f30c060a4f91d72dd1e54ef7cbb946e luong <hienluong1997@gmail.com> 1716834407 +0700	checkout: moving from main to luong/edit-company
+25fe10024f30c060a4f91d72dd1e54ef7cbb946e 25fe10024f30c060a4f91d72dd1e54ef7cbb946e luong <hienluong1997@gmail.com> 1716834464 +0700	checkout: moving from luong/edit-company to luong/edit-user
+25fe10024f30c060a4f91d72dd1e54ef7cbb946e fa64df8213ed88aafcd01bab7b3a3d6644f589b9 luong <hienluong1997@gmail.com> 1716911283 +0700	checkout: moving from luong/edit-user to luongnt/edit-company
+fa64df8213ed88aafcd01bab7b3a3d6644f589b9 ba7e16f4007dee5f7af8908063171d2fdd320f9e luong <hienluong1997@gmail.com> 1716922711 +0700	commit: update edit user form
+ba7e16f4007dee5f7af8908063171d2fdd320f9e ba7e16f4007dee5f7af8908063171d2fdd320f9e luong <hienluong1997@gmail.com> 1716996253 +0700	checkout: moving from luongnt/edit-company to luongnt/edit-company
+ba7e16f4007dee5f7af8908063171d2fdd320f9e e06d29d7680e0d68feb7bb9b51b1c192192d279f luong <hienluong1997@gmail.com> 1716996255 +0700	pull origin luongnt/edit-company: Fast-forward
+e06d29d7680e0d68feb7bb9b51b1c192192d279f 32977a6c86590f4129f1d74fb1485ba38cae6bcb luong <hienluong1997@gmail.com> 1716997065 +0700	commit: add icon for dashboard
+32977a6c86590f4129f1d74fb1485ba38cae6bcb 7fea27c91231ab735cb1c3a6babb397270801992 luong <hienluong1997@gmail.com> 1717080936 +0700	checkout: moving from luongnt/edit-company to luongnt/ai
+7fea27c91231ab735cb1c3a6babb397270801992 10a61810727b87b6859149e0c7446b6698bcf4db luong <hienluong1997@gmail.com> 1717094477 +0700	commit: create embedding
+10a61810727b87b6859149e0c7446b6698bcf4db 32977a6c86590f4129f1d74fb1485ba38cae6bcb luong <hienluong1997@gmail.com> 1717094516 +0700	checkout: moving from luongnt/ai to luongnt/edit-company
+32977a6c86590f4129f1d74fb1485ba38cae6bcb 24fb507b3877d0cbe379d9c9cb4c20778a635a50 luong <hienluong1997@gmail.com> 1717100971 +0700	commit: edit job form
+24fb507b3877d0cbe379d9c9cb4c20778a635a50 2ab886c0b57aa44c979852db4a7e41ebc9a34e63 luong <hienluong1997@gmail.com> 1717101094 +0700	checkout: moving from luongnt/edit-company to main
+2ab886c0b57aa44c979852db4a7e41ebc9a34e63 cc3f939b4cb6f16e95e16f9f7e75d432d0fab446 luong <hienluong1997@gmail.com> 1717101096 +0700	pull origin main: Fast-forward
+cc3f939b4cb6f16e95e16f9f7e75d432d0fab446 59d5877ca04a837daf922979a911f0bc9dff743d luong <hienluong1997@gmail.com> 1717168731 +0700	checkout: moving from main to luongnt/edit-job
+59d5877ca04a837daf922979a911f0bc9dff743d 13a9b0e1d2f91460484902ea4be2745fb78784b7 luong <hienluong1997@gmail.com> 1717361537 +0700	commit: create job embedding
+13a9b0e1d2f91460484902ea4be2745fb78784b7 8dae9fa17a5bf12381900ec2cfc30bdec5b62367 luong <hienluong1997@gmail.com> 1717361581 +0700	commit: handle matching for user
+8dae9fa17a5bf12381900ec2cfc30bdec5b62367 bc9d166827a7ac92a2cbd558896b7c3811ed0ae5 luong <hienluong1997@gmail.com> 1717361625 +0700	commit: refactor code
+bc9d166827a7ac92a2cbd558896b7c3811ed0ae5 bc9d166827a7ac92a2cbd558896b7c3811ed0ae5 luong <hienluong1997@gmail.com> 1717430821 +0700	checkout: moving from luongnt/edit-job to luongnt/edit-job
+bc9d166827a7ac92a2cbd558896b7c3811ed0ae5 ff5dc5aab170787324801128a0cdb61f615bf558 luong <hienluong1997@gmail.com> 1717430823 +0700	pull origin luongnt/edit-job: Fast-forward
+ff5dc5aab170787324801128a0cdb61f615bf558 6806a0fff232e291231dbcda25fbc7d554fb31bf luong <hienluong1997@gmail.com> 1717444995 +0700	commit: hanlde matching
+6806a0fff232e291231dbcda25fbc7d554fb31bf 6806a0fff232e291231dbcda25fbc7d554fb31bf luong <hienluong1997@gmail.com> 1717517739 +0700	checkout: moving from luongnt/edit-job to luongnt/edit-job
+6806a0fff232e291231dbcda25fbc7d554fb31bf fa3cb4570e2ab0a6f057c6dcc12b71f0805881ef luong <hienluong1997@gmail.com> 1717517741 +0700	pull origin luongnt/edit-job: Fast-forward
+fa3cb4570e2ab0a6f057c6dcc12b71f0805881ef 1ed488ec17db69f62cfe73bbf3a7a9d88ac33798 luong <hienluong1997@gmail.com> 1717866897 +0700	checkout: moving from luongnt/edit-job to luongnt/chatbox
+1ed488ec17db69f62cfe73bbf3a7a9d88ac33798 fa3cb4570e2ab0a6f057c6dcc12b71f0805881ef luong <hienluong1997@gmail.com> 1718123835 +0700	checkout: moving from luongnt/chatbox to luongnt/edit-job
+fa3cb4570e2ab0a6f057c6dcc12b71f0805881ef b27f53b699f3b280d40b55d7da56daea296e95b5 luong <hienluong1997@gmail.com> 1718123837 +0700	pull origin luongnt/edit-job: Fast-forward
+b27f53b699f3b280d40b55d7da56daea296e95b5 1ed488ec17db69f62cfe73bbf3a7a9d88ac33798 luong <hienluong1997@gmail.com> 1718123844 +0700	checkout: moving from luongnt/edit-job to luongnt/chatbox
+1ed488ec17db69f62cfe73bbf3a7a9d88ac33798 a7994685d0e797f6ceabac3185d0529da5487742 luong <hienluong1997@gmail.com> 1718123895 +0700	checkout: moving from luongnt/chatbox to luongnt/user-form
+a7994685d0e797f6ceabac3185d0529da5487742 1ed488ec17db69f62cfe73bbf3a7a9d88ac33798 luong <hienluong1997@gmail.com> 1718123927 +0700	checkout: moving from luongnt/user-form to luongnt/chatbox
+1ed488ec17db69f62cfe73bbf3a7a9d88ac33798 a7994685d0e797f6ceabac3185d0529da5487742 luong <hienluong1997@gmail.com> 1718123934 +0700	checkout: moving from luongnt/chatbox to luongnt/user-form

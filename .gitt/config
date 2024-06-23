@@ -1,0 +1,25 @@
+[core]
+	repositoryformatversion = 0
+	filemode = true
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+	precomposeunicode = true
+[remote "origin"]
+	url = https://github.com/MoTech-SG/subsidy.git
+	fetch = +refs/heads/*:refs/remotes/origin/*
+[branch "main"]
+	remote = origin
+	merge = refs/heads/main
+[branch "luongnt/edit-company"]
+	remote = origin
+	merge = refs/heads/luongnt/edit-company
+[branch "luongnt/edit-job"]
+	remote = origin
+	merge = refs/heads/luongnt/edit-job
+[branch "luongnt/chatbox"]
+	remote = origin
+	merge = refs/heads/main
+[branch "luongnt/user-form"]
+	remote = origin
+	merge = refs/heads/main

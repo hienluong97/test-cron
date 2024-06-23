@@ -1,0 +1,225 @@
+{
+  "pages": {
+    "login": {
+      "title": "サインインする",
+      "signin": "サインイン",
+      "signup": "サインアップ",
+      "divider": "または",
+      "fields": {
+        "email": "メールアドレス",
+        "password": "パスワード"
+      },
+      "errors": {
+        "validEmail": "無効なメールアドレス"
+      },
+      "buttons": {
+        "submit": "送信",
+        "forgotPassword": "パスワードをお忘れですか?",
+        "noAccount": "アカウントを作成する",
+        "rememberMe": "Remember me"
+      }
+    },
+    "forgotPassword": {
+      "title": "パスワードをお忘れですか? ",
+      "fields": {
+        "email": "メールアドレス"
+      },
+      "errors": {
+        "validEmail": "無効なメールアドレス"
+      },
+      "buttons": {
+        "submit": "リセット指示を送信する"
+      }
+    },
+    "register": {
+      "title": "アカウントを作成する",
+      "fields": {
+        "email": "メールアドレス",
+        "password": "パスワード"
+      },
+      "errors": {
+        "validEmail": "無効なメールアドレス"
+      },
+      "buttons": {
+        "submit": "作成する",
+        "haveAccount": "すでにアカウントをお持ちですか？"
+      }
+    },
+    "updatePassword": {
+      "title": "パスワード更新",
+      "fields": {
+        "password": "新しいパスワード",
+        "confirmPassword": "新しいパスワード確認"
+      },
+      "errors": {
+        "confirmPasswordNotMatch": "パスワードが一致していません"
+      },
+      "buttons": {
+        "submit": "更新"
+      }
+    },
+    "error": {
+      "info": "You may have forgotten to add the {{action}} component to {{resource}} resource.",
+      "404": "Sorry, the page you visited does not exist.",
+      "resource404": "Are you sure you have created the {{resource}} resource.",
+      "backHome": "ホームに戻る"
+    }
+  },
+  "actions": {
+    "list": "一覧",
+    "create": "作成",
+    "edit": "編集",
+    "show": "表示"
+  },
+  "buttons": {
+    "create": "作成",
+    "save": "保存",
+    "logout": "ログアウト",
+    "delete": "削除",
+    "edit": "編集",
+    "cancel": "キャンセル",
+    "confirm": "ご確認ができましたか?",
+    "filter": "Filter",
+    "clear": "クリア",
+    "refresh": "Refresh",
+    "show": "表示",
+    "undo": "取り消",
+    "import": "Import",
+    "clone": "Clone",
+    "notAccessTitle": "You don't have permission to access"
+  },
+  "warnWhenUnsavedChanges": "Are you sure you want to leave? You have unsaved changes.",
+  "notifications": {
+    "success": "成功",
+    "error": "失敗 (エラー コード: {{statusCode}})",
+    "undoable": "You have {{seconds}} seconds to undo",
+    "createSuccess": "{{resource}}の作成に成功しました。",
+    "createError": "There was an error creating {{resource}} (status code: {{statusCode}})",
+    "deleteSuccess": "{{resource}}に削除されました。",
+    "deleteError": "Error when deleting {{resource}} (status code: {{statusCode}})",
+    "editSuccess": "{{resource}}の編集に成功しました。",
+    "editError": "編集の再にエーラが発生しました{{resource}}の編集の再にエーラが発生しました (ステータスコード: {{statusCode}})",
+    "importProgress": "Importing: {{processed}}/{{total}}"
+  },
+  "loading": "読み込み中",
+  "tags": {
+    "clone": "Clone"
+  },
+  "dashboard": {
+    "dashboard": "ダッシュボード",
+    "title": "ダッシュボード"
+  },
+  "jobs": {
+    "jobs": "求人管理",
+    "fields": {
+      "id": "Id",
+      "title": "Title",
+      "category": "Category",
+      "status": {
+        "title": "Status",
+        "published": "Published",
+        "draft": "Draft",
+        "rejected": "Rejected"
+      },
+      "content": "Content",
+      "createdAt": "Created At"
+    },
+    "titles": {
+      "create": "求人作成",
+      "edit": "求人編集",
+      "list": "求人",
+      "show": "求人情報表示"
+    }
+  },
+  "companies": {
+    "companies": "企業管理",
+    "fields": {
+      "id": "Id",
+      "title": "Title",
+      "category": "Category",
+      "status": {
+        "title": "Status",
+        "published": "Published",
+        "draft": "Draft",
+        "rejected": "Rejected"
+      },
+      "content": "Content",
+      "createdAt": "Created At"
+    },
+    "titles": {
+      "create": "企業作成",
+      "edit": "企業情報編集",
+      "list": "企業一覧",
+      "show": "企業情報表示"
+    }
+  },
+  "users": {
+    "users": "応募管理",
+    "fields": {
+      "id": "Id",
+      "title": "Title",
+      "category": "Category",
+      "status": {
+        "title": "Status",
+        "published": "Published",
+        "draft": "Draft",
+        "rejected": "Rejected"
+      },
+      "content": "Content",
+      "createdAt": "Created At"
+    },
+    "titles": {
+      "create": "会員作成",
+      "edit": "会員情報編集",
+      "list": "会員リスト",
+      "show": "会員情報表示"
+    }
+  },
+  "matchings": {
+    "matchings": "マッチング",
+    "fields": {
+      "id": "Id",
+      "title": "Title",
+      "category": "Category",
+      "status": {
+        "title": "Status",
+        "published": "Published",
+        "draft": "Draft",
+        "rejected": "Rejected"
+      },
+      "content": "Content",
+      "createdAt": "Created At"
+    },
+    "titles": {
+      "create": "マッチング作成",
+      "edit": "マッチング編集",
+      "list": "マッチング一覧",
+      "show": "マッチング情報表示"
+    }
+  },
+  "blog_posts": {
+    "blog_posts": "Blog Posts",
+    "fields": {
+      "id": "Id",
+      "title": "Title",
+      "category": "Category",
+      "status": {
+        "title": "Status",
+        "published": "Published",
+        "draft": "Draft",
+        "rejected": "Rejected"
+      },
+      "content": "Content",
+      "createdAt": "Created At"
+    },
+    "titles": {
+      "create": "Create Post",
+      "edit": "Edit Post",
+      "list": "Posts",
+      "show": "Show Post"
+    }
+  },
+  "table": {
+    "actions": "操作"
+  }
+}

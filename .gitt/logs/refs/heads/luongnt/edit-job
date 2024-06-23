@@ -1,0 +1,8 @@
+0000000000000000000000000000000000000000 59d5877ca04a837daf922979a911f0bc9dff743d luong <hienluong1997@gmail.com> 1717168731 +0700	branch: Created from origin/luongnt/edit-job
+59d5877ca04a837daf922979a911f0bc9dff743d 13a9b0e1d2f91460484902ea4be2745fb78784b7 luong <hienluong1997@gmail.com> 1717361537 +0700	commit: create job embedding
+13a9b0e1d2f91460484902ea4be2745fb78784b7 8dae9fa17a5bf12381900ec2cfc30bdec5b62367 luong <hienluong1997@gmail.com> 1717361581 +0700	commit: handle matching for user
+8dae9fa17a5bf12381900ec2cfc30bdec5b62367 bc9d166827a7ac92a2cbd558896b7c3811ed0ae5 luong <hienluong1997@gmail.com> 1717361625 +0700	commit: refactor code
+bc9d166827a7ac92a2cbd558896b7c3811ed0ae5 ff5dc5aab170787324801128a0cdb61f615bf558 luong <hienluong1997@gmail.com> 1717430823 +0700	pull origin luongnt/edit-job: Fast-forward
+ff5dc5aab170787324801128a0cdb61f615bf558 6806a0fff232e291231dbcda25fbc7d554fb31bf luong <hienluong1997@gmail.com> 1717444995 +0700	commit: hanlde matching
+6806a0fff232e291231dbcda25fbc7d554fb31bf fa3cb4570e2ab0a6f057c6dcc12b71f0805881ef luong <hienluong1997@gmail.com> 1717517741 +0700	pull origin luongnt/edit-job: Fast-forward
+fa3cb4570e2ab0a6f057c6dcc12b71f0805881ef b27f53b699f3b280d40b55d7da56daea296e95b5 luong <hienluong1997@gmail.com> 1718123837 +0700	pull origin luongnt/edit-job: Fast-forward
