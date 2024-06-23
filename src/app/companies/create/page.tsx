@@ -12,15 +12,7 @@ import { useForm, useFieldArray, FormProvider } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from 'yup';
 
-// Define the validation schema using Yup
-const singleCompanySchema = yup.object().shape({
-  name: yup.string().required('企業名は必須です'),
-  website: yup.string().url('有効なURLを入力してください').required('サイトは必須です'),
-});
 
-export const companySchema = yup.object().shape({
-  companies: yup.array().of(singleCompanySchema),
-});
 
 export default function CompanyCreate() {
   const methods = useForm({
