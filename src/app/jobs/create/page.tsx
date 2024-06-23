@@ -11,39 +11,10 @@ import { useNotification } from "@refinedev/core";
 import { jobSchema } from "@validation/index";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { OpenAIEmbeddings } from "@langchain/openai";
-import { createFilterOptions } from '@mui/material/Autocomplete';
-import Company from '@components/company';
-import { useList, HttpError } from "@refinedev/core";
-import { useState } from "react";
 
-interface CompanyType {
-    inputValue?: string;
-    id: string;
-    name: string;
-    description: string
-}
-const filter = createFilterOptions<CompanyType>();
+
 export default function JobCreate() {
-    const { open: openNoti } = useNotification();
-
-    const { data: companiesData, isLoading, isError } = useList<CompanyType, HttpError>({
-        resource: "companies",
-    });
-    const companies = companiesData?.data ?? [];
-
-    const [value, setValue] = useState<CompanyType | null>(null);
-    const [open, toggleOpen] = useState(false);
-
-    const handleClose = () => {
-        setDialogValue({
-            name: '',
-        });
-        toggleOpen(false);
-    };
-
-    const [dialogValue, setDialogValue] = useState({
-        name: '',
-    });
+    const { open } = useNotification();
 
     const {
         saveButtonProps,
@@ -58,99 +29,95 @@ export default function JobCreate() {
         control,
         formState: { errors },
     } = useForm({
-        // resolver: yupResolver(jobSchema),
+        resolver: yupResolver(jobSchema),
     });
 
     const { autocompleteProps: jobStatusAutocompleteProps } = useAutocomplete({
         resource: "job_statuses",
     });
 
-    console.log('jobStatusAutocompleteProps', jobStatusAutocompleteProps)
+    const { autocompleteProps: companyAutocompleteProps } = useAutocomplete({
+        resource: "companies",
+    });
+
 
     const handleSubmitForm = async (data: any) => {
-        const {
-            title,
-            job_category,
-            salary_lower,
-            salary_upper,
-            work_location,
-            description,
-            appeal_points,
-            desired_candidates,
-            selection_process,
-            outline,
-            company_id,
-            working_hours,
-            ocr_text,
-            company_info,
-        } = data;
+      const {
+        title,
+        job_category,
+        salary_lower,
+        salary_upper,
+        work_location,
+        description,
+        appeal_points,
+        desired_candidates,
+        selection_process,
+        outline,
+        company_name,
+        working_hours,
+        ocr_text,
+        company_info,
+      } = data;
 
-        const updatedData = {
-            ...data,
-            company_id: value?.id,
-        };
+      try {
+        const { data: job, error: insertJobError } = await supabaseClient
+          .from("jobs")
+          .insert(data)
+          .select();
 
-        console.log('data',updatedData )
+        if (insertJobError) {
+          console.log("insertJobError"), insertJobError?.message;
+        }
 
-        // try {
-        //     const { data: job, error: insertJobError } = await supabaseClient
-        //         .from("jobs")
-        //         .insert(data)
-        //         .select();
+        const jobId = job?.[0]?.id;
 
-        //     if (insertJobError) {
-        //         console.log("insertJobError", insertJobError?.message)
-        //     }
+        open?.({
+          type: "success",
+          message: "求人の作成に成功しました。",
+          description: "成功",
+          key: jobId,
+        });
 
-        //     const jobId = job?.[0]?.id;
+        redirect('list')
 
-        //     openNoti?.({
-        //         type: "success",
-        //         message: "求人の作成に成功しました。",
-        //         description: "成功",
-        //         key: jobId,
-        //     });
+        // Create vector
+        const openAIApiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY!;
+        const openAIEmbeddings = new OpenAIEmbeddings({
+          openAIApiKey: openAIApiKey,
+        });
 
-        //     redirect('list')
+        const vectorText = [
+          work_location,
+          title,
+          description,
+          desired_candidates,
+          job_category,
+          appeal_points,
+          outline,
+          ocr_text,
+        ].join(" ");
 
-        //     // Create vector
-        //     const openAIApiKey = process.env.NEXT_PUBLIC_OPENAI_API_KEY!;
-        //     const openAIEmbeddings = new OpenAIEmbeddings({
-        //         openAIApiKey: openAIApiKey,
-        //     });
+        const embedding = await openAIEmbeddings.embedQuery(vectorText);
 
-        //     const vectorText = [
-        //         work_location,
-        //         title,
-        //         description,
-        //         desired_candidates,
-        //         job_category,
-        //         appeal_points,
-        //         outline,
-        //         ocr_text,
-        //     ].join(" ");
+        const { error: insertJobVectorError } = await supabaseClient
+          .from("job_documents")
+          .insert({
+            job_id: jobId,
+            embedding: embedding,
+            content: vectorText,
+          });
 
-        //     const embedding = await openAIEmbeddings.embedQuery(vectorText);
+        if (insertJobError) {
+          console.log("insertJobVectorError"), insertJobVectorError?.message;
+        }
 
-        //     const { error: insertJobVectorError } = await supabaseClient
-        //         .from("job_documents")
-        //         .insert({
-        //             job_id: jobId,
-        //             embedding: embedding,
-        //             content: vectorText,
-        //         });
-
-        //     if (insertJobError) {
-        //         console.log("insertJobVectorError", insertJobVectorError?.message)
-        //     }
-
-        // } catch (error) {
-        //     openNoti?.({
-        //         type: "error",
-        //         message: "求人の作成に失敗しました。",
-        //         description: "失敗",
-        //     });
-        // }
+      } catch (error) {
+        open?.({
+          type: "error",
+          message: "求人の作成に失敗しました。",
+          description: "失敗",
+        });
+      }
     };
 
 
@@ -164,64 +131,7 @@ export default function JobCreate() {
                 component="form"
                 sx={{ display: "flex", flexDirection: "column" }}
                 autoComplete="off"
-            >  
-            <Controller
-                    name="company_id"
-                    control={control}
-                    defaultValue={null}
-                    render={({ field }) => (
-                        <Autocomplete
-                            fullWidth
-                            onChange={(_, newValue) => {
-                                if (typeof newValue === 'string') {
-                                    setTimeout(() => {
-                                        toggleOpen(true);
-                                        setDialogValue({ name: newValue });
-                                    });
-                                } else if (newValue && newValue.inputValue) {
-                                    toggleOpen(true);
-                                    setDialogValue({ name: newValue.inputValue });
-                                } else {
-                                    field.onChange(newValue?.id ?? null);
-                                }
-                            }}
-                            filterOptions={(options, params) => {
-                                const filtered = filter(options, params);
-                                if (params.inputValue !== '') {
-                                    filtered.push({
-                                        inputValue: params.inputValue,
-                                        id: '',
-                                        name: `Add "${params.inputValue}"`,
-                                        description: ''
-                                    });
-                                }
-                                return filtered;
-                            }}
-                            options={companies}
-                            getOptionLabel={(option) => {
-                        // When the value is an item from the list, we simply return the title
-                        if (typeof option === 'string') {
-                            return option;
-                        }
-                        if (option.inputValue) {
-                            return option.inputValue;
-                        }
-                        return option.name;
-                    }}
-                            renderOption={(props, option) => (
-                                <li {...props} key={option.id}>
-                                    {option.name}
-                                </li>
-                            )}
-                            selectOnFocus
-                            clearOnBlur
-                            handleHomeEndKeys
-                            freeSolo
-                            renderInput={params => <TextField {...params} label="Select a company" />}
-                        />
-                    )}
-                />
-
+            >
                 <TextField
                     {...register("title")}
                     error={!!(errors as any)?.title}
@@ -246,7 +156,7 @@ export default function JobCreate() {
                 />
 
                 <TextField
-                    {...register("salary_lower", {
+                    {...register("salary_upper", {
                         valueAsNumber: true,
                     })}
                     error={!!(errors as any)?.salary_lower}
@@ -282,7 +192,54 @@ export default function JobCreate() {
                     label={"通勤地"}
                     name="work_location"
                 />
-
+                <Controller
+                    control={control}
+                    name={"company_id"}
+                    rules={{ required: "This field is required" }}
+                    // eslint-disable-next-line
+                    defaultValue={null as any}
+                    render={({ field }) => (
+                        <Autocomplete
+                            id="company_id"
+                            {...companyAutocompleteProps}
+                            {...field}
+                            onChange={(_, value) => {
+                                field.onChange(value?.id);
+                            }}
+                            getOptionLabel={(item) => {
+                                return (
+                                    companyAutocompleteProps?.options?.find((p) => {
+                                        const itemId =
+                                            typeof item === "object"
+                                                ? item?.id?.toString()
+                                                : item?.toString();
+                                        const pId = p?.id?.toString();
+                                        return itemId === pId;
+                                    })?.name ?? ""
+                                );
+                            }}
+                            isOptionEqualToValue={(option, value) => {
+                                const optionId = option?.id?.toString();
+                                const valueId =
+                                    typeof value === "object"
+                                        ? value?.id?.toString()
+                                        : value?.toString();
+                                return value === undefined || optionId === valueId;
+                            }}
+                            renderInput={(params) => (
+                                <TextField
+                                    {...params}
+                                    label={"企業"}
+                                    margin="normal"
+                                    variant="outlined"
+                                    error={!!(errors as any)?.companies?.id}
+                                    helperText={(errors as any)?.companies?.id?.message}
+                                    required
+                                />
+                            )}
+                        />
+                    )}
+                />
                 <TextField
                     {...register("description")}
                     error={!!(errors as any)?.description}
@@ -419,8 +376,6 @@ export default function JobCreate() {
                     }}
                 />
             </Box>
-            <Company  openForm={open} handleClose={handleClose}   dialogValue={dialogValue}setValue={setValue}  />
         </Create>
     );
 }
-
