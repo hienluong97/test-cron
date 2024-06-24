@@ -35,7 +35,7 @@ import { supabaseClient } from "@utility/supabase-client";
 // }
 
 // create a company
-export async function POST(request: NextRequest) {
+export async function GET(request: NextRequest) {
     if (request.headers.get('Authorization') !== `Bearer ${process.env.CRON_SECRET}`) {
         return NextResponse.json(
             { error: "Unauthorized" },
